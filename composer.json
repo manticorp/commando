@@ -1,13 +1,17 @@
 {
-    "name": "nategood/commando",
+    "name": "manticorp/commando",
     "description": "PHP CLI Commando Style",
-    "homepage": "http://github.com/nategood/commando",
+    "homepage": "http://github.com/manticorp/commando",
     "license": "MIT",
     "keywords": ["cli", "command line", "command", "command line interface", "scripting", "automation"],
     "authors": [
         {
             "name": "Nate Good",
             "email": "me@nategood.com"
+        },
+        {
+            "name": "Harry Mustoe-Playfair",
+            "email": "harry.mustoeplayfair@gmail.com"
         }
     ],
     "require": {
