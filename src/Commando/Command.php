@@ -499,7 +499,12 @@ class Command implements \ArrayAccess, \Iterator
                     } else {
                         // the next token MUST be an "argument" and not another flag/option
                         $token = array_shift($tokens);
-                        list($val, $type) = $this->_parseOption($token);
+                        if ($token[0] === '-' && is_numeric($token)) {
+                            $val = floatval($token);
+                            $type = self::OPTION_TYPE_ARGUMENT;
+                        } else {
+                            list($val, $type) = $this->_parseOption($token);
+                        }
                         if ($type !== self::OPTION_TYPE_ARGUMENT)
                             throw new \Exception(sprintf('Unable to parse option %s: Expected an argument', $token));
                         if (!$option->hasReducer()) {
